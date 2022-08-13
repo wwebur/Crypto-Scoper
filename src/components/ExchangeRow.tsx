@@ -1,6 +1,6 @@
 import React from "react";
 import { type ReactNode} from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface ExchangeProps {
     exchange: Record<string, string> | Record<string, ReactNode>;
@@ -9,14 +9,19 @@ interface ExchangeProps {
     // probably need to write out individual info 
 }
 
-const Exchange = ({ exchange, image }: ExchangeProps) => {
+// const style = {
+//   width={20}
+//   height={20}
+// }
+
+const ExchangeRow= ({ exchange, image }: ExchangeProps) => {
 
   return (
-    // <Link to={`/exchanges/${exchange.id}`} className="text-decoration-none my-1 coin">
-    //   <li className="coinlist-item list-group-item list-group-item-action d-flex justify-content-between align-items-center text-dark">
-    <li>
-        {/* <img className="coinlist-image" src={exchange.image as HTMLImageElement} alt="" /> */}
-        <img className="coinlist-image" src={image} alt="" />
+    <Link href={`/exchanges/${exchange.id}`}>
+    {/* //   <li className="coinlist-item list-group-item list-group-item-action d-flex justify-content-between align-items-center text-dark"> */}
+      <li>
+          {/* <img className="coinlist-image" src={exchange.image as HTMLImageElement} alt="" /> */}
+        <img className="coinlist-image" src={image} alt="" width={20} height={20}/>
         <span>{exchange.id}</span>
 
         <span
@@ -35,8 +40,8 @@ const Exchange = ({ exchange, image }: ExchangeProps) => {
           {exchange.country}
         </span>
       </li>
-    // </Link>
+    </Link>
   );
 };
 
-export default Exchange;
+export default ExchangeRow;

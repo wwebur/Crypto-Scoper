@@ -1,10 +1,14 @@
 import type { NextPage } from 'next'
 import Directory from '../components/Directory';
 import React from 'react'
+import NavComponent from '../components/Navbar';
 
 const Home = () => {
   return (
-    <div> <Directory/> </div>
+    <div>   
+      <NavComponent/>
+      <Directory/> 
+    </div>
   )
 }
 

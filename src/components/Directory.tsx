@@ -2,8 +2,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useEffect, useState } from "react";
-import Exchange from './Exchange';
+import Exchange from './ExchangeRow';
 import coingecko from '../pages/api/coingecko';
+import ExchangeRow from './ExchangeRow';
 
 const Directory: NextPage = () => {
 
@@ -13,7 +14,7 @@ const Directory: NextPage = () => {
     const fetchData = async () => {
       const response = await coingecko.get(`/exchanges/`, {
           params: {
-            ids: "binance",
+            ids: "",
           },
         });
       // console.log(response.data.slice(0,10))
@@ -23,17 +24,6 @@ const Directory: NextPage = () => {
 
     fetchData();
   }, []);
-  // const coingeckoFetch = async (exchange) => {
-  //   fetch(coingeckoUrl(exchange)).then((response) =>
-  //     response.json().then((jsonData) => {
-  //       if (buy) {
-  //         setTrade({ ...trade, buyData: jsonData });
-  //       } else {
-  //         setTrade({ ...trade, sellData: jsonData });
-  //       }
-  //     })
-  //   );
-  // };
 
   return (
 
@@ -47,7 +37,8 @@ const Directory: NextPage = () => {
       {/* <h3>${exchanges}</h3> */}
       <ul>
         {exchanges.map((exchange) => {
-          return <Exchange key={exchange.id} exchange={exchange} image={exchange.image}/>
+          // TODO: pass in full data as prop to use in dynamic rendering
+          return <ExchangeRow key={exchange.id} exchange={exchange} image={exchange.image}/>
         })}
       </ul>
     </>
