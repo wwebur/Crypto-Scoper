@@ -3,7 +3,7 @@ import React from 'react'
 // @ts-ignore
 export const getStaticProps = async (context) => {
   const name = context.params.id;
-  const id = context.params.name; // how to test this??
+  
   const response = await fetch ('https://api.coingecko.com/api/v3/exchanges/' + name)
   console.log(response)
   const data = await response.json();
@@ -27,7 +27,7 @@ export const getStaticPaths = async () => {
     // @ts-ignore
     const paths = exchangeData.map(exchange => { 
       return {
-        params: { exchangeId: exchange.id.toString() }
+        params: { id: exchange.id.toString() }
         // params: { exchangeId: exchange.id }
       }
     })
