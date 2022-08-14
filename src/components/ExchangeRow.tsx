@@ -3,8 +3,9 @@ import { type ReactNode} from "react";
 import Link from "next/link";
 
 interface ExchangeProps {
+    id: string;
     exchange: Record<string, string> | Record<string, ReactNode>;
-    image: string
+    image: string;
     // exchange.image: Record<string, string> 
     // probably need to write out individual info 
 }
@@ -14,10 +15,13 @@ interface ExchangeProps {
 //   height={20}
 // }
 
-const ExchangeRow= ({ exchange, image }: ExchangeProps) => {
-
+const ExchangeRow= ({ id, exchange, image }: ExchangeProps) => {
+    // const id = exchange.id;
+    console.log(exchange)
   return (
-    <Link href={`/exchanges/${exchange.id}`}>
+    // does the below line need a key??
+    
+    <Link href={`/exchanges/${exchange.id}`} id={id}> 
     {/* //   <li className="coinlist-item list-group-item list-group-item-action d-flex justify-content-between align-items-center text-dark"> */}
       <li>
           {/* <img className="coinlist-image" src={exchange.image as HTMLImageElement} alt="" /> */}

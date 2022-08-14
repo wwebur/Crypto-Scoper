@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import Exchange from './ExchangeRow';
 import coingecko from '../pages/api/coingecko';
 import ExchangeRow from './ExchangeRow';
+import Link from 'next/link';
 
 const Directory: NextPage = () => {
 
@@ -38,11 +39,25 @@ const Directory: NextPage = () => {
       <ul>
         {exchanges.map((exchange) => {
           // TODO: pass in full data as prop to use in dynamic rendering
-          return <ExchangeRow key={exchange.id} exchange={exchange} image={exchange.image}/>
-        })}
+          return <ExchangeRow key={exchange.id} exchange={exchange} image={exchange.image} id={exchange.id}/>
+          // return (
+          //   <Link href={`/exchanges/${exchange.id}`} key={exchange.id}> 
+          //     <li>
+          //       <img className="coinlist-image" src={exchange.image} alt="" width={20} height={20}/>
+          //       <span>{exchange.id}</span>
+
+          //       {/* <span */}
+
+          //         {exchange.country}
+          //       {/* // </span> */}
+          //     </li>
+          //   </Link>
+          //         )
+                })}
       </ul>
     </>
-  );
+
+  )
 
 }
 

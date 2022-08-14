@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 // import coingecko from '../pages/api/coingecko';
 // @ts-ignore
 export const getStaticProps = async (context) => {
-  const id = context.params.id; // how to test this??
-  const response = await fetch ('https://api.coingecko.com/api/v3/exchanges/binance')
+  const name = context.params.id;
+  const id = context.params.name; // how to test this??
+  const response = await fetch ('https://api.coingecko.com/api/v3/exchanges/' + name)
   console.log(response)
   const data = await response.json();
+  console.log("name: ", name)
   return {
     props: {
       // @ts-ignore
@@ -19,8 +21,9 @@ export const getStaticProps = async (context) => {
 export const getStaticPaths = async () => {
     const exchanges = await fetch ('https://api.coingecko.com/api/v3/exchanges/')
     const exchangeData = await exchanges.json();
+    const topTenData = exchangeData.slice(0,10);
   
-    // map data to an array of path objects with params (id)
+    // map data to an array of path objects with params (name)
     // @ts-ignore
     const paths = exchangeData.map(exchange => { 
       return {
@@ -37,9 +40,10 @@ export const getStaticPaths = async () => {
 
 // @ts-ignore
 const Details = ({ exchange }) => {
+  console.log(exchange)
 // const Details = () => {
   return (
-    <div>{exchange.id}</div>
+    <div>{exchange.name}</div>
     // <div>Details Page</div>
   )
 }
