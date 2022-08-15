@@ -1,52 +1,88 @@
 import React from "react";
-import { type ReactNode} from "react";
 import Link from "next/link";
 import { Exchange } from "src/types";
 
 interface ExchangeProps {
     id: string;
     exchange: Exchange;
-    // image: string;
-    // exchange.image: Record<string, string> 
-    // probably need to write out individual info 
+    counter: number;
 }
 
-// const style = {
-//   width={20}
-//   height={20}
-// }
+const styles = {
+  directoryCardRow: `bg-white border-b dark:bg-gray-800 dark:border-gray-700`,
+  boldColumn: `py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white`,
+  standardColumn: `py-4 px-6`,
+  linkColumn: `font-medium text-blue-600 dark:text-blue-500 hover:underline`,
+}
 
-const ExchangeRow= ({ id, exchange }: ExchangeProps) => {
-    // const id = exchange.id;
-    console.log(exchange)
+const ExchangeRow= ({ id, exchange, counter }: ExchangeProps) => {
+  const url = exchange.url;
+  const shortUrl = url.includes("kraken") ?  "kraken.com" : removeProtocol(url);
+
   return (
-    // does the below line need a key??
-    
-    <Link href={`/exchanges/${exchange.id}`} id={id}> 
-    {/* //   <li className="coinlist-item list-group-item list-group-item-action d-flex justify-content-between align-items-center text-dark"> */}
-      <li>
-          {/* <img className="coinlist-image" src={exchange.image as HTMLImageElement} alt="" /> */}
-        <img className="coinlist-image" src={exchange.image} alt="" width={20} height={20}/>
-        <span>{exchange.id}</span>
+    <>
+     <tr className={styles.directoryCardRow}>
+      {/* column # */}
+          <td className={styles.standardColumn}>{counter}</td>
+          {/* column Exchange */}
+          <Link href={`/exchanges/${exchange.id}`} id={id}>
+        <a>
+            <th scope="row" className={styles.boldColumn}> 
+              {/* <span> */}
+                <img src={exchange.image} alt="" width={20} height={20}/>
+              {/* </span> */}
+              {exchange.name}
+            </th>
+            </a>
+        </Link>  
+            {/* column trust score */}
+            <td className={styles.standardColumn}>{exchange.trust_score}</td>
+            {/* column country */}
+            <td className={styles.standardColumn}>
+              {exchange.country}
+            </td>
 
-        <span
-        //   className={
-        //     exchange.price_change_percentage_24h < 0
-        //       ? "text-danger mr-2"
-        //       : "text-success mr-2"
-        //   }
-        >
-          {/* {" "}
-          {exchange.price_change_percentage_24h < 0 ? (
-            <i className="fas fa-sort-down align-middle mr-1"></i>
-          ) : (
-            <i className="fas fa-sort-up align-middle mr-1"></i>
-          )} */}
-          {exchange.country}
-        </span>
-      </li>
-    </Link>
+        {/* column url */}
+        <td className={styles.linkColumn}>
+          {shortUrl}
+        </td>
+        
+      </tr>  
+    </>
   );
 };
 
 export default ExchangeRow;
+
+
+function removeProtocol(url: string){
+  // startsWith
+
+  if(url.startsWith("www.")){
+      const www = "www."
+      return url.slice(www.length)
+  }
+
+  if(url.startsWith("https://www.")){
+      const https = "https://www."
+      // slice() method
+      return url.slice(https.length)
+  }
+
+  if(url.startsWith("http://www.")){
+      const http = "http://www."
+      return url.slice(http.length)
+  }
+
+  if(url.startsWith("https://")){
+      const https = "https://"
+      return url.slice(https.length)
+  }
+
+  if(url.startsWith('http://')){
+      const http = "http://"
+      return url.slice(http.length)
+  }
+
+  return url
+}
