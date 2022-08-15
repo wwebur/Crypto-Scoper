@@ -42,8 +42,6 @@ const Directory: NextPage = () => {
               Central Exchanges
               <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Scope the list of the top 10 CEX's below and click the exchange name to read more.</p>
           </caption>
-        {/* <div className={styles.directoryCard}>
-          <div className={styles.directoryCardWrapper}> */}
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className={styles.directoryHead}>#</th>
@@ -54,16 +52,11 @@ const Directory: NextPage = () => {
             </tr>
           </thead>
           <tbody>
-            {/* <div className='flex'> */}
-              
                 {exchanges.map((exchange) => {
                   counter += 1;
                   return <ExchangeRow key={exchange.id} exchange={exchange} id={exchange.id} counter={counter}/>
                         })}
-            {/* </div> */}
           </tbody>
-          {/* </div>
-        </div> */}
       </table>
     </>
   )}
