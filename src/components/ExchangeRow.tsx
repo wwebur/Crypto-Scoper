@@ -25,16 +25,15 @@ const ExchangeRow= ({ id, exchange, counter }: ExchangeProps) => {
       {/* column # */}
           <td className={styles.standardColumn}>{counter}</td>
           {/* column Exchange */}
-          <Link href={`/exchanges/${exchange.id}`} id={id}>
-        <a>
-            <th scope="row" className={styles.boldColumn}> 
-              {/* <span> */}
-                <img src={exchange.image} alt="" width={20} height={20}/>
-              {/* </span> */}
-              {exchange.name}
-            </th>
-            </a>
-        </Link>  
+          <td className={styles.linkColumn}>
+            <Link href={`/exchanges/${exchange.id}`} id={id}>
+              <span className="cursor-pointer">
+                  <img src={exchange.image} alt="" width={20} height={20}/>
+                {exchange.name}
+              </span>
+           </Link>  
+          </td>
+
             {/* column trust score */}
             <td className={styles.standardColumn}>{exchange.trust_score}</td>
             {/* column country */}

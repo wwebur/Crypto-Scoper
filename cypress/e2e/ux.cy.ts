@@ -11,6 +11,6 @@ describe('ux', () => {
         })
         cy.findByRole('link', {  name: /website/i})
         // return to home
-        // visit further exchange
+        cy.findByRole('link', {  name: /crypto scoper/i})
     })
 })
