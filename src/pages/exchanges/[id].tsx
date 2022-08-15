@@ -95,9 +95,20 @@ const Details = ({ exchange }: DetailsProps) => {
       {exchange.name} is a {exchange.centralized ? "centralized" : "decentralized"} exchange located in {exchange.country}. {exchange.name} has a trust rank of {exchange.trust_score_rank} and was established in {exchange.year_established}. 
       </h1>
       <div className="flex mt-2 pl-8 justify-between items-center w-full">
-        <a href={exchange.facebook_url}><FaFacebook size={30}/></a>
-        <a href={twitter}><FaTwitter size={30}/></a>
-        <a href={exchange.url}><FaSitemap size={30}/></a>
+        {(exchange.facebook_url) && (exchange.facebook_url.includes(".co")) ? 
+          <a href={exchange.facebook_url}><FaFacebook size={30}/></a> 
+          : "" 
+        }
+        {exchange.twitter_handle ? 
+          <a href={twitter}><FaTwitter size={30}/></a> 
+          : ""
+        }
+        {exchange.url ? 
+          <a href={exchange.url}><FaSitemap size={30}/></a> 
+          : ""
+        }
+        
+        
       </div>
 
       </div>
