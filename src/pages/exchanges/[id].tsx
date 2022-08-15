@@ -65,8 +65,7 @@ type DetailsProps = {
 const Details = ({ exchange }: DetailsProps) => {
   console.log(exchange)
   const twitter = `https://twitter.com/${exchange?.twitter_handle}`;
-// TODO: create about from info
-// 
+
   return (
     <div>
       <NavComponent/>
