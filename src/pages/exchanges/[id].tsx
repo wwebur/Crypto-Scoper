@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react'
+import { fetchExchangeById, fetchExchanges } from 'src/api/coinGecko.api';
 // import { FaTwitter } from 'react-icons/fa';
 import NavComponent from '../../components/Navbar';
 import {type Exchange} from '../../types/exchange.types'
@@ -23,9 +24,10 @@ export const getStaticProps: GetStaticProps<GetStaticPropsReturn, GetStaticProps
     }
   }
 
-  const response = await fetch ('https://api.coingecko.com/api/v3/exchanges/' + id)
-  console.log(response)
-  const data = await response.json();
+  // const response = await fetch ('https://api.coingecko.com/api/v3/exchanges/' + id)
+  // console.log(response)
+  // const data = await response.json();
+  const data = await fetchExchangeById(id)
   console.log("name: ", id)
   return {
     props: {
@@ -38,10 +40,10 @@ export const getStaticProps: GetStaticProps<GetStaticPropsReturn, GetStaticProps
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const exchanges = await fetch ('https://api.coingecko.com/api/v3/exchanges/')
-    const exchangeData = await exchanges.json() as Exchange[]
+    // const exchanges = await fetch ('https://api.coingecko.com/api/v3/exchanges/')
+    // const exchangeData = await exchanges.json() as Exchange[]
     // const topTenData = exchangeData.slice(0,10);
-  
+    const exchangeData = await fetchExchanges()
     // map data to an array of path objects with params (name)
     const paths = exchangeData.map(exchange => { 
       return {
@@ -62,7 +64,7 @@ type DetailsProps = {
 
 const Details = ({ exchange }: DetailsProps) => {
   console.log(exchange)
-  const twitter = `https://twitter.com/${exchange.twitter_handle}`;
+  const twitter = `https://twitter.com/${exchange?.twitter_handle}`;
 // TODO: create about from info
 // 
   return (

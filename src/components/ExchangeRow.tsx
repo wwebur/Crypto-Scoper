@@ -1,11 +1,12 @@
 import React from "react";
 import { type ReactNode} from "react";
 import Link from "next/link";
+import { Exchange } from "src/types";
 
 interface ExchangeProps {
     id: string;
-    exchange: Record<string, string> | Record<string, ReactNode>;
-    image: string;
+    exchange: Exchange;
+    // image: string;
     // exchange.image: Record<string, string> 
     // probably need to write out individual info 
 }
@@ -15,7 +16,7 @@ interface ExchangeProps {
 //   height={20}
 // }
 
-const ExchangeRow= ({ id, exchange, image }: ExchangeProps) => {
+const ExchangeRow= ({ id, exchange }: ExchangeProps) => {
     // const id = exchange.id;
     console.log(exchange)
   return (
@@ -25,7 +26,7 @@ const ExchangeRow= ({ id, exchange, image }: ExchangeProps) => {
     {/* //   <li className="coinlist-item list-group-item list-group-item-action d-flex justify-content-between align-items-center text-dark"> */}
       <li>
           {/* <img className="coinlist-image" src={exchange.image as HTMLImageElement} alt="" /> */}
-        <img className="coinlist-image" src={image} alt="" width={20} height={20}/>
+        <img className="coinlist-image" src={exchange.image} alt="" width={20} height={20}/>
         <span>{exchange.id}</span>
 
         <span

@@ -9,7 +9,6 @@ describe('ux', () => {
             console.log('els', els)
             cy.wrap(els[0]).click()
         })
-        //@ts-ignore
         cy.findByRole('link', {  name: /website/i})
         // return to home
         // visit further exchange
