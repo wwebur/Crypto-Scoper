@@ -3,7 +3,7 @@
 How to run next js app:
 https://github.com/Ianshaw93/exchange-directory/blob/main/INSTRUCTIONS.md
 
-Crypto Exchange Directory showing the top ten Centralized exchanges and corresponding details. Coded using Typescript, Next js (React), Tailwind CSS and tested using Cypress and Jest. API layer included for fetches from Coingecko API.
+Crypto Exchange Directory showing the top ten Centralized exchanges and corresponding details. Coded using Typescript, Next js (React), Tailwind CSS and tested using Cypress and Jest. API layer included for interface with Coingecko API.
 
 # App so Far
 
