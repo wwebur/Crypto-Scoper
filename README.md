@@ -11,7 +11,7 @@ From the main directory page users will be able to navigate to any of the crytoc
 
 ![image](https://user-images.githubusercontent.com/76686112/184887668-6fad7066-56c7-47fb-bbd5-9221893a538a.png)
 
-![image](https://user-images.githubusercontent.com/76686112/184887779-ab17db3f-0935-43ef-8df7-f09b5daddc26.png)
+![image](https://user-images.githubusercontent.com/76686112/184887978-07bc20d8-a9ed-4579-8721-a6bdd4e2be15.png)
 
 # Future Features
 
