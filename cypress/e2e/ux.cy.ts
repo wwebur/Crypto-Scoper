@@ -1,4 +1,5 @@
 // const { v4: uuidv4 } = require('uuid');
+export {};
 
 describe('ux', () => {
     it('user view exchanges', () => {
@@ -16,4 +17,3 @@ describe('ux', () => {
     })
 })
 
-export {};
