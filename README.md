@@ -7,10 +7,12 @@ Crypto Exchange Directory showing the top ten Centralized exchanges and correspo
 
 # App so Far
 
-From the main directory page users will be able to navigate to any of the crytocurrency exchange pages where further info and social links/ links to the exchange site are available.
+From the main directory page users will be able to navigate to any of the (dynamically rendered) crytocurrency exchange pages where further info and social links/ links to the exchange site are available.
 
+Main directory page:
 ![image](https://user-images.githubusercontent.com/76686112/184887668-6fad7066-56c7-47fb-bbd5-9221893a538a.png)
 
+Binance exchange page:
 ![image](https://user-images.githubusercontent.com/76686112/184887978-07bc20d8-a9ed-4579-8721-a6bdd4e2be15.png)
 
 # Future Features
@@ -22,7 +24,7 @@ From the main directory page users will be able to navigate to any of the crytoc
 # What I Learned
 
 * Implementation of an API layer
-* Next js routing
+* Next js dynamic routing
 * Cypress end to end testing framework
 * Jest unit testing
 * Integration of typescript into the above
