@@ -9,6 +9,10 @@ Crypto Exchange Directory showing the top ten Centralized exchanges and correspo
 
 From the main directory page users will be able to navigate to any of the crytocurrency exchange pages where further info and social links/ links to the exchange site are available.
 
+![image](https://user-images.githubusercontent.com/76686112/184887668-6fad7066-56c7-47fb-bbd5-9221893a538a.png)
+
+![image](https://user-images.githubusercontent.com/76686112/184887779-ab17db3f-0935-43ef-8df7-f09b5daddc26.png)
+
 # Future Features
 
 * Allow users to star favourite exchanges and include signin to remember preferences
