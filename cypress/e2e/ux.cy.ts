@@ -4,7 +4,8 @@ describe('ux', () => {
     it('user view exchanges', () => {
         // main page
         // visit first exchange page
-        cy.visit('http://localhost:3000')
+        // cy.visit('http://localhost:3000')
+        cy.visit('/')
         cy.findAllByText('Cayman Islands').then(els => {
             console.log('els', els)
             cy.wrap(els[0]).click()
