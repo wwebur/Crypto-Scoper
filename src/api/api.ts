@@ -11,7 +11,7 @@ import {
 const axiosParams = {
   // Set different base URL based on the environment
   baseURL:
-    process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'crypto-scoper-9jjw09hzm-ianshaw93.vercel.app',
+    process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : '/',
 }
 
 // Create axios instance with default params
