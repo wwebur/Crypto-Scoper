@@ -43,9 +43,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
     // const exchanges = await fetch ('https://api.coingecko.com/api/v3/exchanges/')
     // const exchangeData = await exchanges.json() as Exchange[]
     // const topTenData = exchangeData.slice(0,10);
-    const exchangeData = await fetchExchanges()
+    const exchangeData = await fetchExchanges();
+    const topTenData = exchangeData.slice(0,10);
     // map data to an array of path objects with params (name)
-    const paths = exchangeData.map(exchange => { 
+    const paths = topTenData.map(exchange => { 
       return {
         params: { id: exchange.id.toString() }
         // params: { exchangeId: exchange.id }
