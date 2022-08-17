@@ -75,7 +75,7 @@ const Details = ({ exchange }: DetailsProps) => {
         <div className="bg-white w-1/3 mt-10 rounded-lg">
         <div className="flex items-center justify-center pt-10 flex-col">
           
-      <img src={exchange.image} className="rounded-full w-24"/>
+      <img src={exchange.image} className="rounded-full w-24" alt=""/>
       <br/>
       <h1 className="text-gray-800 font-semibold text-xl mt-5">
         {exchange.name} 

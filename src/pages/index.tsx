@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 import Directory from '../components/Directory';
 import React from 'react'
 import NavComponent from '../components/Navbar';
@@ -30,15 +30,4 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     }
   }
 }
-// const Home: NextPage = () => {
 
-//    return (
-
-//     <>
-//       <Directory/>
-//     </>
-//   );
-
-// }
-
-// export default Home

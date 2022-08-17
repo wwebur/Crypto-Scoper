@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+// import Image from "next/image";
 import { Exchange } from "src/types";
 
 interface ExchangeProps {
