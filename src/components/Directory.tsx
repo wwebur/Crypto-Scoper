@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import React, { useEffect, useState } from "react";
-import coingecko from '../pages/api/coingecko';
+import { fetchExchanges } from 'src/api/coinGecko.api';
+import { Exchange } from 'src/types';
 import ExchangeRow from './ExchangeRow';
 
 const styles = {
@@ -9,24 +10,36 @@ const styles = {
   directoryHead: `py-3 px-6`,
 }
 
+interface DirectoryProps {
+  exchanges: Exchange[];
+}
+// pass in props from home page
+const Directory = ({exchanges}: DirectoryProps) => {
+  console.log("directory exchanges: ", exchanges)
+  // // change to use API layer
+  // const [ exchanges, setExchanges ] = useState<any[]>([]);
 
-const Directory: NextPage = () => {
-  // change to use API layer
-  const [ exchanges, setExchanges ] = useState<any[]>([]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await coingecko.get(`/exchanges/`, {
+  //         params: {
+  //           ids: "",
+  //         },
+  //       });
+  //     const topTenExchangeData = response.data.slice(0,10)
+  //     setExchanges(topTenExchangeData)
+  //   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await coingecko.get(`/exchanges/`, {
-          params: {
-            ids: "",
-          },
-        });
-      const topTenExchangeData = response.data.slice(0,10)
-      setExchanges(topTenExchangeData)
-    };
-
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
+  // const exchanges = async () => {
+  //   const data = await fetchExchanges()
+  //   const topTenData = data.slice(0,10);
+  //   return {
+  //        topTenData
+  //     }
+  //   }
+  
 
   let counter = 0;
   return (

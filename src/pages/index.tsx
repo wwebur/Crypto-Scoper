@@ -9,11 +9,12 @@ type HomeProps = {
   exchanges: Exchange[]
 }
 
-const Home = (props: HomeProps) => {
+const Home = ({exchanges}: HomeProps) => {
+  console.log("home props: ",exchanges)
   return (
     <div>   
       <NavComponent/>
-      <Directory/> 
+      <Directory exchanges={exchanges}/> 
     </div>
   )
 }
