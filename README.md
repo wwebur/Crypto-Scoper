@@ -1,5 +1,7 @@
 # Crypto Scoper - Crypto Exchange Directory
 
+Deploy branch hosted: https://crypto-scoper-kqganric4-ianshaw93.vercel.app/
+
 How to run next js app:
 https://github.com/Ianshaw93/exchange-directory/blob/main/INSTRUCTIONS.md
 
