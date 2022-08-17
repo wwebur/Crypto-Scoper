@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, Cancel } from 'axios'
+import { config } from 'cypress/types/bluebird';
 import {
   ApiRequestConfig,
   WithAbortFn,
@@ -7,11 +8,20 @@ import {
   ApiError,
 } from './api.types'
 
+// const configs = {
+//   development: {
+//     SERVER_URI: 'localhost:5000',
+//   },
+//   production: {
+//     SERVER_URI: 'VERCEL_URI',
+//   },
+// };
 // Default config for the axios instance
 const axiosParams = {
   // Set different base URL based on the environment
   baseURL:
-    process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : '/',
+    // process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : '/',
+    process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'VERCEL_URI',
 }
 
 // Create axios instance with default params
