@@ -1,9 +1,12 @@
 # Crypto Scoper - Crypto Exchange Directory
 
+Crypto Exchange Directory showing the top ten Centralized exchanges and corresponding details. Coded using Typescript, Next js (React), Tailwind CSS and tested using Cypress and Jest. API layer included for interface with Coingecko API.
+
+View live app (deploy branch): https://crypto-scoper-kqganric4-ianshaw93.vercel.app/
+
 How to run next js app:
 https://github.com/Ianshaw93/exchange-directory/blob/main/INSTRUCTIONS.md
 
-Crypto Exchange Directory showing the top ten Centralized exchanges and corresponding details. Coded using Typescript, Next js (React), Tailwind CSS and tested using Cypress and Jest. API layer included for interface with Coingecko API.
 
 # App so Far
 
