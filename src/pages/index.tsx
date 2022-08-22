@@ -12,10 +12,10 @@ type HomeProps = {
 const Home = ({exchanges}: HomeProps) => {
   console.log("home props: ",exchanges)
   return (
-    <div>   
+    <>  
       <NavComponent/>
       <Directory exchanges={exchanges}/> 
-    </div>
+    </> 
   )
 }
 

@@ -45,28 +45,31 @@ const Directory = ({exchanges}: DirectoryProps) => {
   return (
 
     <>
-
-      <table className='table-auto w-full text-sm text-left text-gray-500 dark:text-gray-40'>
-        <caption className="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-              Central Exchanges
-              <p className="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">{"Scope the list of the top 10 CEX's below and click the exchange name to read more."}</p>
-          </caption>
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-              <th scope="col" className={styles.directoryHead}>#</th>
-              <th scope="col" className={styles.directoryHead}>Exchange</th>
-              <th scope="col" className={styles.directoryHead}>Trust Score</th>
-              <th scope="col" className={styles.directoryHead}>Country</th>
-              <th scope="col" className={styles.directoryHead}>URL</th>
-            </tr>
-          </thead>
-          <tbody>
-                {exchanges.map((exchange) => {
-                  counter += 1;
-                  return <ExchangeRow key={exchange.id} exchange={exchange} id={exchange.id} counter={counter}/>
-                        })}
-          </tbody>
-      </table>
+      <div className='w-full bg-white pt-400'>
+        <table className='w-full text-sm text-left text-gray-500 dark:text-gray-40 pt-50 object-bottom'>
+          <caption className="p-5 pt-100 text-lg font-semibold text-center invisible text-trasparent md:text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                Central Exchanges <br/>
+                <p className="mt-1 text-sm font-normal text-white md:text-white-500 dark:text-white-400">
+                  {"Scope the list of the top 10 CEX's below and click the exchange name to read more."}
+                </p>
+            </caption>
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                <th scope="col" className={styles.directoryHead}>#</th>
+                <th scope="col" className={styles.directoryHead}>Exchange</th>
+                <th scope="col" className={styles.directoryHead}>Trust Score</th>
+                <th scope="col" className={styles.directoryHead}>Country</th>
+                <th scope="col" className={styles.directoryHead}>URL</th>
+              </tr>
+            </thead>
+            <tbody>
+                  {exchanges.map((exchange) => {
+                    counter += 1;
+                    return <ExchangeRow key={exchange.id} exchange={exchange} id={exchange.id} counter={counter}/>
+                          })}
+            </tbody>
+        </table>
+      </div>
     </>
   )}
 

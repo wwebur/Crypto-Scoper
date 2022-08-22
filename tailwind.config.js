@@ -6,10 +6,17 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    colors: {
+      'matte-gray': '#55B6E',
+      'dark-green': '#89B0AE',
+      'light-green': '#BEE3DB',
+      'off-white': '#FAF9F9',
+      'beige': '#FFD6BA',
+    },
     extend: {},
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
