@@ -2,6 +2,9 @@
 
 Crypto Exchange Directory showing the top ten Centralized exchanges and corresponding details. Coded using Typescript, Next js (React), Tailwind CSS and tested using Cypress and Jest. API layer included for interface with Coingecko API.
 
+![image](https://user-images.githubusercontent.com/76686112/186133648-4f2bf168-585a-4d56-93c2-e9b8d7577766.png)
+
+
 View live app (deploy branch): https://crypto-scoper-ianshaw93.vercel.app/
 
 How to run next js app:
@@ -14,9 +17,12 @@ From the main directory page users will be able to navigate to any of the (dynam
 
 Main directory page:
 ![image](https://user-images.githubusercontent.com/76686112/184887668-6fad7066-56c7-47fb-bbd5-9221893a538a.png)
+![image](https://user-images.githubusercontent.com/76686112/186133883-c931fe20-bad6-48d9-8ff1-bfceb11c7c11.png)
 
 Binance exchange page:
 ![image](https://user-images.githubusercontent.com/76686112/184887978-07bc20d8-a9ed-4579-8721-a6bdd4e2be15.png)
+![image](https://user-images.githubusercontent.com/76686112/186133995-3b446183-bd3e-4bb7-a8b1-abdcebdbf51e.png)
+
 
 # Future Features
 
