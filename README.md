@@ -5,10 +5,10 @@ Crypto Exchange Directory showing the top ten Centralized exchanges and correspo
 ![image](https://user-images.githubusercontent.com/76686112/186133648-4f2bf168-585a-4d56-93c2-e9b8d7577766.png)
 
 
-View live app (deploy branch): https://crypto-scoper-ianshaw93.vercel.app/
+View live app (deploy branch): https://crypto-scoper.vercel.app/
 
 How to run next js app:
-https://github.com/Ianshaw93/exchange-directory/blob/main/INSTRUCTIONS.md
+https://github.com/pnqw/Crypto-Scoper/blob/main/INSTRUCTIONS.md
 
 
 # App so Far
